@@ -29,6 +29,11 @@ struct ContentView: View {
                     .padding()
                     .foregroundColor(.red)
             }
+                .font(.subheadline)
+            Divider()
+            Text("Hello, World!")
+                .padding()
+                .foregroundColor(.green)
         }
             .padding()
 
