@@ -23,6 +23,7 @@ struct FrameWorkView: View {
             Text(title)
                 .font(.headline)
                 .padding(8)
+                .foregroundColor(Color(.label))
         }
 
     }
