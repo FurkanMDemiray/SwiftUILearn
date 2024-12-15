@@ -14,6 +14,7 @@ struct CharacterDetailV: View {
     init(result: Res) {
         _viewModel = StateObject(
             wrappedValue: CharacterDetailVM(result: result))
+        UITableView.appearance().showsVerticalScrollIndicator = false
     }
 
     var body: some View {
@@ -51,11 +52,19 @@ struct CharacterDetailV: View {
                     .font(.system(size: 24).weight(.regular))
                 Text("Location: \(viewModel.location)")
                     .font(.system(size: 24).weight(.regular))
-                ScrollView {
-                    Text("Episode: \(viewModel.episodeNames)")
-                        .font(.system(size: 24).weight(.regular))
-                        .lineLimit(nil)
+                Text("Episodes:")
+                    .font(.system(size: 32).bold())
+                List {
+                    ForEach(viewModel.episodeNames, id: \.self) {
+                        episodeName in
+                        Text(episodeName)
+                            .font(.system(size: 24).weight(.regular))
+                            .lineLimit(nil)
+                            .padding(.trailing, 20)
+                    }
                 }
+                .listStyle(PlainListStyle())
+
             }
             .padding()
             Spacer()

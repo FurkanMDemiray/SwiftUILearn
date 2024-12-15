@@ -37,7 +37,6 @@ struct CharacterV: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .listRowSeparator(Visibility.hidden)
         }
         .onAppear {
             viewModel.fetchCharacters()
