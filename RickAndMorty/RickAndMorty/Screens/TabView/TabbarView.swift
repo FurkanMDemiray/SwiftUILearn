@@ -12,7 +12,7 @@ struct TabbarView: View {
         TabView {
             CharacterV()
                 .tabItem {
-                    Label("Characters", systemImage: "person.3.fill")               
+                    Label("Characters", systemImage: "person.3.fill")
                 }
             ContentView()
                 .tabItem {

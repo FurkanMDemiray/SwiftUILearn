@@ -35,7 +35,7 @@ struct CharacterV: View {
                         }
                     }
                 }
-            }
+            }            
             .listStyle(PlainListStyle())
         }
         .onAppear {

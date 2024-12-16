@@ -15,31 +15,17 @@ struct ListRow: View {
 
     var body: some View {
         HStack {
-            AsyncImage(
-                url: URL(
-                    string:
-                        imageUrl
-                )
-            ) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 60, height: 60)
-                    .clipShape(Circle())
-                    .shadow(radius: 10, x: 5, y: 5)
-                    .overlay(Circle().stroke(Color.black, lineWidth: 2))
-                    .padding()
-            } placeholder: {
-                ProgressView()
-            }
+            AsyncImageView(url: imageUrl, width: 70, height: 70, cornerRadius: 35)
             VStack(alignment: .leading) {
                 Text(name)
-                    .font(.headline)
+                    .font(.system(size: 20).bold())
                 Text(species)
-                    .font(.subheadline)
+                    .font(.system(size: 18).weight(.regular))
             }
             .foregroundColor(Color(uiColor: .label))
+            .padding(.trailing, 10)
         }
+        //.background(LinearGradient(colors: [.purple,.red], startPoint: .top, endPoint: .bottom), in: RoundedRectangle(cornerRadius: 20))
     }
 }
 

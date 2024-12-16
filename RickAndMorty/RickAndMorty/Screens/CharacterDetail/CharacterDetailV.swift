@@ -18,23 +18,13 @@ struct CharacterDetailV: View {
     }
 
     var body: some View {
-        AsyncImage(
-            url: URL(string: viewModel.imageUrl)
-        ) { image in
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 300, height: 300)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .shadow(radius: 10, x: 5, y: 5)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20).stroke(
-                        Color.black, lineWidth: 2)
-                )
-                .padding()
-        } placeholder: {
-            ProgressView()
-        }
+
+        AsyncImageView(
+            url: viewModel.imageUrl,
+            width: 300,
+            height: 300,
+            cornerRadius: 20
+        )
 
         HStack {
             VStack(alignment: .leading, spacing: 8) {
