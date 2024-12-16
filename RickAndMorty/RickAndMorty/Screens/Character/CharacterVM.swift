@@ -5,7 +5,6 @@
 //  Created by Melik Demiray on 14.12.2024.
 //
 
-import Alamofire
 import Foundation
 
 protocol CharacterVMProtocol {
@@ -16,9 +15,9 @@ protocol CharacterVMProtocol {
 class CharacterVM: ObservableObject {
     @Published private(set) var characters: [Character] = []
 
-    let networkService: NetworkService
+    let networkService: NetworkServiceProtocol
 
-    init(networkService: NetworkService = Network()) {
+    init(networkService: NetworkServiceProtocol = Network()) {
         self.networkService = networkService
     }
 

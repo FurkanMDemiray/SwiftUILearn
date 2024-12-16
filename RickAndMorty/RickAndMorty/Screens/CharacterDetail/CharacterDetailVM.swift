@@ -22,9 +22,9 @@ final class CharacterDetailVM: ObservableObject {
     @Published private(set) var result: Res?
     @Published private(set) var episodeNames: [String] = []
 
-    private let networkService: NetworkService
+    private let networkService: NetworkServiceProtocol
 
-    init(result: Res? = nil, networkService: NetworkService = Network()) {
+    init(result: Res? = nil, networkService: NetworkServiceProtocol = Network()) {
         self.result = result
         self.networkService = networkService
     }

@@ -8,7 +8,7 @@
 import Alamofire
 import Foundation
 
-protocol NetworkService {
+protocol NetworkServiceProtocol {
     func request<T: Decodable>(
         _ url: String,
         method: HTTPMethod,
@@ -18,7 +18,7 @@ protocol NetworkService {
     )
 }
 
-class Network: NetworkService {
+class Network: NetworkServiceProtocol {
     func request<T: Decodable>(
         _ url: String,
         method: HTTPMethod = .get,
